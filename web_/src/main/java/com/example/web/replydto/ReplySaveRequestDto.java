@@ -2,6 +2,7 @@ package com.example.web.replydto;
 
 import com.example.web.reply.Reply;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,4 +22,12 @@ public class ReplySaveRequestDto
             .authorId(authorId)
             .build();
     }
+
+    @Builder
+    public ReplySaveRequestDto(String replyContent, String authorId)
+    {
+        this.replyContent = replyContent;
+        this.authorId = authorId;
+    }
+
 }

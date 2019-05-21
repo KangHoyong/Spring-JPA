@@ -3,8 +3,8 @@ package com.example.web;
 import com.example.web.postsDto.PostsModifyRequestDto;
 import com.example.web.postsDto.PostsSaveRequestDto;
 import com.example.web.replydto.ReplySaveRequestDto;
-//import com.example.web.posts.PostsRepository;
 import com.example.web.service.PostsService;
+import com.example.web.service.ReplyService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +19,7 @@ public class WebRestController{
 
     //private PostsRepository postsRepository;
     private PostsService postsService;
+    private ReplyService replyService;
 
     // 생성자 생성해야하나 @AllArgsConstructor 쓰면 자동으로 생성 실제로는 밑에 코드 작성 필요 
     /*
@@ -54,9 +55,9 @@ public class WebRestController{
 
     // 게시글 댓글 영역
     @PostMapping("/reply")
-    public void saveReply(@RequestBody ReplySaveRequestDto dto)
+    public Long saveReply(@RequestBody ReplySaveRequestDto dto)
     {
-        
+        return replyService.replySave(dto);
     }
     /*
     @PostMapping("/posts/modify")
