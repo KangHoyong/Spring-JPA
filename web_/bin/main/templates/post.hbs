@@ -9,10 +9,11 @@
 </head>
 <body>
     <table class="table table-horizontal table-bordered">
+         <!-- 게시글 상세 목록 출력 영역 -->
         <tr>
             <td>글 번호 : {{post.id}}</td>
             <td>글 제목 : {{post.title}}</td>
-            <td>작성자 : {{posts.author}}</td>
+            <td>작성자 : {{post.author}}</td>
         </tr>
         <tr>
             <td colspan="3"> 글 내용 : {{post.content}}</td>
@@ -23,9 +24,63 @@
             <button type="buttom" class="btn btn-info" data-toggle="modal" data-target="#modifyPostModal">수정</button>
             <button type="buttom" class="btn btn-info" id="btn-delete" >삭제</button>
             <input type="hidden" id="delete-id" value="{{post.id}}">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveReplyModal">댓글 등록</button>
         </tr>
+        <!-- 댓글 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+                <tr>
+                    <th>댓글번호</th>
+                    <th>댓글내용</th>
+                    <th>작성자</th>
+                    <th>최종수정일</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#each reply}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{replyContent}}</td>
+                    <td>{{authorId}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    </div>    
 
-    <!-- Modal 영역 -->
+    <!-- Modal 댓글 등록 영역 -->
+    <div class="modal fade" id="saveReplyModal" tabindex="-1" role="dialog" aria-labelledby="saveReplyLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saveReplyLabel">댓글 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="authorId"> 작성자 </label>
+                            <input type="text" class="form-control" id="authorId" placeholder="작성자를 입력하세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="replyContent"> 내용 </label>
+                            <textarea class="form-control" id="replyContent" placeholder="내용을 입력하세요"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary" id="btn-replysave">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 게시글 수정 영역 -->
     <div class="modal fade" id="modifyPostModal" tabindex="-1" role="dialog" aria-labelledby="modifyPostModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -40,7 +95,7 @@
                         <div class="form-group">
                             <label for="title"> 제목 </label>
                             <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-                            <input type="hidden" id="id" value="{{post.id}}"
+                            <input type="hidden" id="id" value="{{post.id}}">
                         </div>
                         <div class="form-group">
                             <label for="author"> 작성자 </label>
@@ -65,5 +120,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- post.js -->
     <script src="/js/post.js"></script>
+    <!-- reply.js -->
+    <script src="/js/reply.js"></script>
 </body>
 </html>

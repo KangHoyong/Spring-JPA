@@ -54,7 +54,7 @@ public class WebRestController{
     }
 
     // 게시글 댓글 영역
-    @PostMapping("/reply")
+    @PostMapping("/posts/reply")
     public Long saveReply(@RequestBody ReplySaveRequestDto dto)
     {
         return replyService.replySave(dto);
