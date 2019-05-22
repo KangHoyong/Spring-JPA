@@ -1,0 +1,10 @@
+google :
+  client :
+    clientId : 437656205558-bbs3hknve6qc18jhgf6ustohri4kkvhb.apps.googleusercontent.com
+    clientSecret: dUpSmSGISQnVipJipYkLWD2e 
+    accessTokenUri: https://accounts.google.com/o/oauth2/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+    clientAuthenticationScheme: form
+    scope: email, profile
+  resource:
+    userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
