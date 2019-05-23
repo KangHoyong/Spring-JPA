@@ -17,26 +17,21 @@
         
        - 실제로 DB에 insert 되었는지 확인하기 위해 조회후, 입력된 값 확인 
         
-  - [PostsDto 구현](https://github.com/KangHoyong/Spring-webservice/tree/master/web%20/src/main/java/com/example/web/postsDto) 
-  
-  - [PostsService 구현](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/java/com/example/web/service/PostsService.java#L23)
-  
-  - Postman + 웹 콘솔로 검증 
-     - DB : local환경에선 DB로 H2를 사용 H2 DB를 관리할 수 있는 웹 클라이언트 접속하여 사용 
-     
-  - [생성시간 / 수정시간 자동화 - JPA Auditing](hhttps://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/java/com/example/web/BaseTimeEntity.java) 
-     - 매번 DB에 insert하기전, update 하기전에 날짜 데이터를 등록 / 수정 하는 코드 
-        
-  - [handlebars-spring-boot-starter](https://github.com/allegro/handlebars-spring-boot-starter): 웹 헨들러 사용 
-  
-  - [부트스트랩](https://getbootstrap.com) : 프론트엔드 라이브러리 다운받아서 진행 CDN 이용하여 작성 안함 CDN서버 폭파하면 같이 망함!!
-  * Front-End 영역
-    * [Main.js 등록](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/resources/static/js/main.js#L1)
-    * [Posts.js 수정 삭제 목록](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/resources/static/js/post.js#L4)
-    * [Posts-Modal 영역](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/resources/templates/main.hbs#L42)
-    * [Posts-목록 출력 영역](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/resources/templates/main.hbs#L19)
-    * [Posts상세 보기 삭제 수정](https://github.com/KangHoyong/Spring-webservice/blob/master/web%20/src/main/resources/templates/post.hbs#L11)
+  - Posts
+    1. [Posts.java : Entity class 실제 DB의 테이블과 메칭될 클래스 생성](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/posts/Posts.java#L24) 
 
+    2. [Repository.java : Mybatis Dao 부분 DB Layer 접근자](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/posts/PostsRepository.java#L10)
+
+  - BaseTimeEntity
+    1. [BaseTimeEntity클래스는 모든 Entity들의 상위 클래스가 되어 Entity들의 createdDate, modifiedDate를 자동으로 관리하는 역할입니다.](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/BaseTimeEntity.java) 
+
+  - PostsService 
+    1. [Service 메소드도 생성해서 트랜잭션 관리](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/service/PostsService.java#L23)
+     
+  - 웹 헨들러 사용 
+    1. [handlebars-spring-boot-starter](https://github.com/allegro/handlebars-spring-boot-starter): 웹 헨들러 사용 
+  
+ 
 ## Introduction
 스프링 부트로더 공부 
 1. 게시판 만들기 
@@ -45,17 +40,13 @@
  * 게시글 수정
  * 게시글 삭제
  
-2. 게시판 댓글 서비스 만들기 (현재 진행중)
+2. 게시판 댓글 
+ * 댓글 등록 
+ * 댓글 리스트 출력 
  
-
-
- 
-
 
 ## 개발환경 
-[개발환경 build.gradle](https://github.com/KangHoyong/Spring-webservice/blob/master/web/build.gradle)
-
-
+[개발환경 build.gradle](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/build.gradle)
 
 
 ## Developer
