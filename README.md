@@ -23,7 +23,7 @@
     2. [Repository.java : Mybatis Dao 부분 DB Layer 접근자](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/posts/PostsRepository.java#L10)
 
   - BaseTimeEntity
-    1. [BaseTimeEntity클래스는 모든 Entity들의 상위 클래스가 되어 Entity들의 createdDate, modifiedDate를 자동으로 관리하는 역할입니다.](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/BaseTimeEntity.java) 
+    1. [BaseTimeEntity클래스는 모든 Entity들의 상위 클래스가 되어 Entity들의 createdDate, modifiedDate를 자동으로 관리](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/BaseTimeEntity.java) 
 
   - PostsService 
     1. [Service 메소드도 생성해서 트랜잭션 관리](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/src/main/java/com/example/web/service/PostsService.java#L23)
@@ -37,21 +37,19 @@
 1. 게시판 만들기 
  * 글등록 
  * 게시글 리스트 화면 출력 ![KakaoTalk_Photo_2019-05-12-17-45-08](https://user-images.githubusercontent.com/9815703/57579885-ba145580-74dd-11e9-9caf-0443951eec3a.png)
- * 게시글 수정
- * 게시글 삭제
+ * 게시글 세부보기 ![세부 사항](https://user-images.githubusercontent.com/9815703/58248224-8ddabd80-7d96-11e9-946a-793da315e65b.PNG)
+ * 게시글 수정 ![수정](https://user-images.githubusercontent.com/9815703/58248261-a4811480-7d96-11e9-8aec-b996fb335262.PNG)
+ * 게시글 삭제 ![2번글 삭제](https://user-images.githubusercontent.com/9815703/58248290-afd44000-7d96-11e9-8d1f-7fbbad24e6b3.PNG)
  
 2. 게시판 댓글 
- * 댓글 등록 
- * 댓글 리스트 출력 
+ * 댓글 등록 ![댓글 등록](https://user-images.githubusercontent.com/9815703/58248304-ba8ed500-7d96-11e9-9517-6820913028ad.PNG)
+ * 댓글 리스트 출력 ![댓글 등록 후](https://user-images.githubusercontent.com/9815703/58248320-c4183d00-7d96-11e9-89b6-621f40390810.PNG)
  
-
 ## 개발환경 
 [개발환경 build.gradle](https://github.com/KangHoyong/Spring-JPA/blob/master/web_/build.gradle)
 
-
 ## Developer
 [@KangHoyong](https://github.com/KangHoyong)
-
 
 ## 참고 사이트 
 https://jojoldu.tistory.com/251?category=635883
