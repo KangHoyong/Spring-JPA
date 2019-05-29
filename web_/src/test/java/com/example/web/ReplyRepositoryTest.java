@@ -32,7 +32,6 @@ public class ReplyRepositoryTest
         replyRepository.deleteAll();
     }
 
-
     @Test
     public void 댓글저장_불러오기()
     {

@@ -9,14 +9,14 @@ import java.util.stream.Stream;
 
 public interface PostsRepository extends JpaRepository<Posts, Long>
 {
-    // 조회 
+    // 게시판 조회 쿼리 
     @Query("SELECT a " +
     "FROM Posts a " +
     "ORDER BY a.id DESC")
     Stream<Posts> findAllDesc();
 
-    // 수정 <- 퀴리의 문제인지 모르겠음 ...!!! 
     
+    // 게시판 수정 쿼리 
     @Modifying
     @Query("UPDATE Posts p "
             + "SET p.title = ?1, "

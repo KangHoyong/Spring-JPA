@@ -16,6 +16,7 @@ import lombok.Getter;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseTimeEntity
 {
+    // 시간 구하기 (최종 수정일)
     @CreatedDate
     private LocalDateTime createdDate;
 

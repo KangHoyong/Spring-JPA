@@ -37,11 +37,7 @@ public class Reply extends BaseTimeEntity
     @Builder
     public Reply(String replyContent, String authorId)
     {
-          
             this.replyContent = replyContent;
             this.authorId = authorId;
-        
     }
-
-
 }

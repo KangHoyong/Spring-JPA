@@ -2,6 +2,7 @@ package com.example.web.replydto;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 import com.example.web.reply.Reply;
 
@@ -24,6 +25,18 @@ public class ReplyMainResponDto
         modifiedDate = toStringDateTime(entity.getModifiedDate());
     }
 
+    // java 8버전 
+    public String toStringDateTime(LocalDateTime localDateTime)
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return Optional.ofNullable(localDateTime)
+            .map(formatter::format)
+            .orElse("");
+    }
+
+
+   /*
+    // Java 7버전 
     public String toStringDateTime(LocalDateTime localDateTime)
     {
         if(localDateTime == null)
@@ -33,4 +46,6 @@ public class ReplyMainResponDto
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return formatter.format(localDateTime);
     }
+   */
+    
 }
