@@ -34,6 +34,10 @@ public class PostsRepositoryTest
     public void cleanup()
     {
         postsRepository.deleteAll();
+        /*
+        이후 테스트 코드에 영향을 끼치지 않기 위해 
+        테스트 메소드가 끝날때 마다 respository 전체 비우는 코드
+        */
     }
 
     @Test
